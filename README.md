@@ -1,5 +1,9 @@
 # CAPS
 
+## Resources
+
+- ChatGPT
+
 ## Contributers
 
 - Jacob Knaack
