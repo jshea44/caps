@@ -1,20 +1,9 @@
 'use strict';
 
-const eventEmitter = require('./hub.js');
-const eventPool = new eventEmitter();
+const events = require('events');
 
-eventPool.on('any', (payload) => {
-  console.log('EVENT', {
-    event: payload.type,
-    time: new Date(),
-    payload: payload.payload,
-  });
-});
+const eventEmitter = new events.EventEmitter();
 
-eventPool.on('delivered', (payload) => {
-  const customerName = payload.payload.customer;
-
-  console.log('Thank you for order', customerName);
-});
-
-module.exports = eventPool;
+module.exports = {
+  eventEmitter,
+};
