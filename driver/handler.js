@@ -2,7 +2,7 @@
 
 const eventPool = require('../eventPool.js');
 
-function handleDriver() {
+function handleDriver(payload) {
   console.log('DRIVER: picked up ' + payload.orderID);
   eventPool.emit('in-transit', payload);
 
